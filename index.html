@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Westfield Academy</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#4F46E5',secondary:'#10B981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+body.light-mode {
+background-color: #f8fafc;
+color: #1f2937;
+}
+body.dark-mode {
+background-color: #111827;
+color: #f3f4f6;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Playfair Display', serif;
+}
+.hero-section {
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://readdy.ai/api/search-image?query=modern%20university%20campus%20with%20beautiful%20architecture%2C%20students%20walking%2C%20green%20trees%2C%20blue%20sky%2C%20bright%20sunlight%2C%20academic%20atmosphere%2C%20high%20quality%2C%20photorealistic%2C%20professional%20photography&width=1920&height=1080&seq=1&orientation=landscape');
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+}
+.nav-transparent {
+background-color: transparent;
+transition: background-color 0.3s ease;
+}
+.nav-solid {
+background-color: rgba(15, 23, 42, 0.95);
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.typewriter {
+overflow: hidden;
+border-right: 0.15em solid #4F46E5;
+white-space: nowrap;
+margin: 0 auto;
+letter-spacing: 0.15em;
+animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+@keyframes typing {
+from { width: 0 }
+to { width: 100% }
+}
+@keyframes blink-caret {
+from, to { border-color: transparent }
+50% { border-color: #4F46E5 }
+}
+.bounce {
+animation: bounce 2s infinite;
+}
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+40% { transform: translateY(-20px); }
+60% { transform: translateY(-10px); }
+}
+.card {
+transition: all 0.3s ease;
+}
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.program-card {
+transition: all 0.3s ease;
+}
+.program-card:hover {
+transform: scale(1.03);
+}
+.faculty-image {
+transition: all 0.3s ease;
+}
+.faculty-image:hover {
+transform: scale(1.1);
+}
+.hotspot {
+animation: pulse 2s infinite;
+}
+@keyframes pulse {
+0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7); }
+70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(79, 70, 229, 0); }
+100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(79, 70, 229, 0); }
+}
+.social-icon {
+transition: all 0.3s ease;
+}
+.social-icon:hover {
+transform: translateY(-3px);
+color: #4F46E5;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 18px;
+height: 18px;
+border: 2px solid #4F46E5;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #4F46E5;
+}
+.custom-checkbox:checked::after {
+content: "";
+position: absolute;
+top: 2px;
+left: 5px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.floating-label {
+position: absolute;
+pointer-events: none;
+left: 12px;
+top: 12px;
+transition: 0.2s ease all;
+}
+input:focus ~ .floating-label,
+input:not(:placeholder-shown) ~ .floating-label {
+top: -10px;
+left: 10px;
+font-size: 12px;
+opacity: 1;
+background: #f8fafc;
+padding: 0 5px;
+}
+.news-card {
+overflow: hidden;
+}
+.news-card img {
+transition: transform 0.5s ease;
+}
+.news-card:hover img {
+transform: scale(1.1);
+}
+.read-more-btn {
+position: relative;
+overflow: hidden;
+}
+.read-more-btn::after {
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0;
+height: 2px;
+background-color: #4F46E5;
+transition: width 0.3s ease;
+}
+.read-more-btn:hover::after {
+width: 100%;
+}
+.carousel {
+scroll-behavior: smooth;
+scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+display: none;
+}
+.carousel-indicator {
+transition: all 0.3s ease;
+}
+.carousel-indicator.active {
+background-color: #4F46E5;
+width: 24px;
+}
+.counter {
+animation: count-up 2.5s ease-out;
+}
+@keyframes count-up {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.resource-card {
+transition: all 0.3s ease;
+}
+.resource-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.shine {
+position: relative;
+overflow: hidden;
+}
+.shine::after {
+content: "";
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+transform: rotate(30deg);
+animation: shine 3s infinite;
+}
+@keyframes shine {
+0% { transform: translateX(-100%) rotate(30deg); }
+100% { transform: translateX(100%) rotate(30deg); }
+}
+.dropdown {
+opacity: 0;
+transform: translateY(-10px);
+visibility: hidden;
+transition: all 0.3s ease;
+}
+.dropdown-container:hover .dropdown {
+opacity: 1;
+transform: translateY(0);
+visibility: visible;
+}
+.back-to-top {
+opacity: 0;
+visibility: hidden;
+transition: all 0.3s ease;
+}
+.back-to-top.visible {
+opacity: 1;
+visibility: visible;
+}
+@media (max-width: 768px) {
+.hero-section {
+background-attachment: scroll;
+}
+.mobile-menu {
+transform: translateX(-100%);
+transition: transform 0.3s ease;
+visibility: hidden;
+}
+.mobile-menu.open {
+transform: translateX(0);
+visibility: visible;
+}
+}
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<header class="fixed w-full z-50 nav-transparent">
+<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<button id="theme-toggle" class="w-10 h-10 flex items-center justify-center text-white">
+<i class="ri-sun-line dark:ri-moon-line"></i>
+</button>
+<a href="#" class="text-white text-2xl font-['Pacifico']">logo</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center space-x-8">
+<div class="dropdown-container relative group">
+<a href="#home" class="text-white hover:text-primary transition-colors duration-300">Home</a>
+<div class="dropdown absolute left-0 mt-2 w-48 bg-white rounded shadow-lg py-2 z-10">
+<a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About Us</a>
+<a href="#history" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Our History</a>
+<a href="#campus" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Campus Life</a>
+</div>
+</div>
+<div class="dropdown-container relative group">
+<a href="#academics" class="text-white hover:text-primary transition-colors duration-300">Academics</a>
+<div class="dropdown absolute left-0 mt-2 w-48 bg-white rounded shadow-lg py-2 z-10">
+<a href="#undergraduate" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Undergraduate</a>
+<a href="#graduate" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Graduate</a>
+<a href="#research" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Research</a>
+<a href="#faculties" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Faculties</a>
+</div>
+</div>
+<div class="dropdown-container relative group">
+<a href="#admissions" class="text-white hover:text-primary transition-colors duration-300">Admissions</a>
+<div class="dropdown absolute left-0 mt-2 w-48 bg-white rounded shadow-lg py-2 z-10">
+<a href="#apply" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Apply Now</a>
+<a href="#requirements" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Requirements</a>
+<a href="#financial-aid" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Financial Aid</a>
+<a href="#international" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">International Students</a>
+</div>
+</div>
+<a href="#events" class="text-white hover:text-primary transition-colors duration-300">Events</a>
+<a href="#news" class="text-white hover:text-primary transition-colors duration-300">News</a>
+<a href="#contact" class="text-white hover:text-primary transition-colors duration-300">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<a href="#" class="hidden md:block bg-primary hover:bg-opacity-90 text-white px-4 py-2 !rounded-button transition-all duration-300 whitespace-nowrap">Student Portal</a>
+<!-- Mobile Menu Button -->
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-white" id="mobile-menu-button">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Navigation -->
+<div class="mobile-menu fixed top-0 left-0 h-full w-64 bg-gray-900 z-50 p-4 shadow-lg transform -translate-x-full transition-transform duration-300 hidden" id="mobile-menu">
+<div class="flex justify-between items-center mb-8">
+<a href="#" class="text-white text-xl font-['Pacifico']">logo</a>
+<button class="w-8 h-8 flex items-center justify-center text-white" id="close-menu-button">
+<i class="ri-close-line ri-lg"></i>
+</button>
+</div>
+<nav class="flex flex-col space-y-4">
+<a href="#home" class="text-white hover:text-primary transition-colors duration-300">Home</a>
+<a href="#academics" class="text-white hover:text-primary transition-colors duration-300">Academics</a>
+<a href="#admissions" class="text-white hover:text-primary transition-colors duration-300">Admissions</a>
+<a href="#events" class="text-white hover:text-primary transition-colors duration-300">Events</a>
+<a href="#news" class="text-white hover:text-primary transition-colors duration-300">News</a>
+<a href="#contact" class="text-white hover:text-primary transition-colors duration-300">Contact</a>
+<a href="#portal" class="bg-primary hover:bg-opacity-90 text-white px-4 py-2 !rounded-button transition-all duration-300 mt-4 text-center whitespace-nowrap">Student Portal</a>
+</nav>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section min-h-screen flex items-center">
+<div class="container mx-auto px-4 py-16">
+<div class="max-w-2xl text-white">
+<h1 class="text-4xl md:text-6xl font-bold mb-4 typewriter">Shaping Tomorrow's Leaders</h1>
+<p class="text-xl mb-8">Westfield Academy offers world-class education with innovative teaching methods and state-of-the-art facilities to prepare students for a successful future.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#" class="bg-primary hover:bg-opacity-90 text-white px-6 py-3 !rounded-button transition-all duration-300 whitespace-nowrap">Apply Now</a>
+<a href="#" class="bg-white hover:bg-gray-100 text-gray-900 px-6 py-3 !rounded-button transition-all duration-300 whitespace-nowrap">Virtual Tour</a>
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white bounce">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-arrow-down-line ri-lg"></i>
+</div>
+</div>
+</section>
+<!-- Announcements & News Section -->
+<section class="py-16 bg-white dark:bg-gray-900">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Latest News & Announcements</h2>
+<p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Stay updated with the latest happenings, events, and announcements from our vibrant campus community.</p>
+</div>
+<div class="flex justify-center mb-8">
+<div class="inline-flex bg-gray-100 p-1 !rounded-full">
+<button class="px-4 py-2 !rounded-full bg-primary text-white whitespace-nowrap">All News</button>
+<button class="px-4 py-2 !rounded-full text-gray-700 hover:bg-gray-200 transition-colors duration-300 whitespace-nowrap">Academic</button>
+<button class="px-4 py-2 !rounded-full text-gray-700 hover:bg-gray-200 transition-colors duration-300 whitespace-nowrap">Events</button>
+<button class="px-4 py-2 !rounded-full text-gray-700 hover:bg-gray-200 transition-colors duration-300 whitespace-nowrap">Sports</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="card bg-white rounded-lg shadow-md overflow-hidden">
+<div class="news-card h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=university%20students%20in%20a%20modern%20classroom%20setting%2C%20diverse%20group%2C%20engaged%20in%20learning%2C%20bright%20and%20airy%20space%2C%20educational%20environment%2C%20high%20quality%2C%20photorealistic&width=600&height=400&seq=2&orientation=landscape" alt="Academic Excellence Awards" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center text-sm text-gray-500 mb-2">
+<div class="w-4 h-4 flex items-center justify-center mr-2">
+<i class="ri-calendar-line"></i>
+</div>
+<span>May 2, 2025</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Academic Excellence Awards Ceremony</h3>
+<p class="text-gray-600 mb-4">Join us for the annual Academic Excellence Awards ceremony honoring our top-performing students across all departments.</p>
+<a href="#" class="read-more-btn inline-flex items-center text-primary font-medium">
+Read More
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<div class="card bg-white rounded-lg shadow-md overflow-hidden">
+<div class="news-card h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=university%20research%20laboratory%20with%20scientists%20working%2C%20modern%20equipment%2C%20professional%20setting%2C%20scientific%20environment%2C%20bright%20lighting%2C%20high%20quality%2C%20photorealistic&width=600&height=400&seq=3&orientation=landscape" alt="Research Grant" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center text-sm text-gray-500 mb-2">
+<div class="w-4 h-4 flex items-center justify-center mr-2">
+<i class="ri-calendar-line"></i>
+</div>
+<span>April 28, 2025</span>
+</div>
+<h3 class="text-xl font-bold mb-2">$2.5M Research Grant Awarded to Science Department</h3>
+<p class="text-gray-600 mb-4">Our Science Department has been awarded a prestigious $2.5 million grant to fund groundbreaking research in renewable energy.</p>
+<a href="#" class="read-more-btn inline-flex items-center text-primary font-medium">
+Read More
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<div class="card bg-white rounded-lg shadow-md overflow-hidden">
+<div class="news-card h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=university%20campus%20cultural%20festival%20with%20performances%2C%20colorful%20decorations%2C%20students%20celebrating%2C%20outdoor%20event%2C%20vibrant%20atmosphere%2C%20high%20quality%2C%20photorealistic&width=600&height=400&seq=4&orientation=landscape" alt="Cultural Festival" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center text-sm text-gray-500 mb-2">
+<div class="w-4 h-4 flex items-center justify-center mr-2">
+<i class="ri-calendar-line"></i>
+</div>
+<span>May 10, 2025</span>
+</div>
+<h3 class="text-xl font-bold mb-2">Annual Cultural Festival: Celebrating Diversity</h3>
+<p class="text-gray-600 mb-4">Experience a vibrant celebration of cultures from around the world at our annual festival featuring performances, food, and art.</p>
+<a href="#" class="read-more-btn inline-flex items-center text-primary font-medium">
+Read More
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<a href="#" class="inline-flex items-center justify-center bg-white border border-gray-300 text-gray-700 px-6 py-3 !rounded-button hover:bg-gray-50 transition-colors duration-300 whitespace-nowrap">
+View All News
+<div class="w-4 h-4 flex items-center justify-center ml-2">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Academic Programs -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Academic Programs</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Discover our comprehensive range of undergraduate and graduate programs designed to prepare you for success in your chosen field.</p>
+</div>
+<div class="relative">
+<div class="carousel flex overflow-x-auto pb-8 space-x-6" id="program-carousel">
+<div class="program-card flex-shrink-0 w-full md:w-80 bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-flask-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Science & Engineering</h3>
+<p class="text-gray-600 mb-4">Explore cutting-edge programs in Computer Science, Biotechnology, Mechanical Engineering, and more.</p>
+<div class="mb-4">
+<div class="text-sm font-medium text-gray-700 mb-1">Popular Programs:</div>
+<ul class="text-sm text-gray-600 space-y-1">
+<li class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-2 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+Computer Science
+</li>
+<li class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-2 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+Biotechnology
+</li>
+<li class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-2 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+Civil Engineering
+</li>
+</ul>
+</div>
+<a href="#" class="inline-flex items-center text-primary font-medium">
+Learn More
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<div class="program-card flex-shrink-0 w-full md:w-80 bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-book-open-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Arts & Humanities</h3>
+<p class="text-gray-600 mb-4">Develop critical thinking and creative skills through programs in Literature, History, Fine Arts, and more.</p>
+<div class="mb-4">
+<div class="text-sm font-medium text-gray-700 mb-1">Popular Programs:</div>
+<ul class="text-sm text-gray-600 space-y-1">
+<li class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-2 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+English Literature
+</li>
+<li class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-2 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+History & Cultural Studies
+</li>
+<li class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-2 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+Fine Arts & Design
+</li>
+</ul>
+</div>
+<a href="#" class="inline-flex items-center text-primary font-medium">
+Learn More
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<div class="program-card flex-shrink-0 w-full md:w-80 bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-line-chart-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Business & Economics</h3>
+<p class="text-gray-600 mb-4">Prepare for leadership roles with programs in Business Administration, Finance, Marketing, and Economics.</p>
+<div class="mb-4">
+<div class="text-sm font-medium text-gray-700 mb-1">Popular Programs:</div>
+<ul class="text-sm text-gray-600 space-y-1">
+<li class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-2 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+Business Administration
+</li>
+<li class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-2 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+Finance & Accounting
+</li>
+<li class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-2 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+Marketing & Communications
+</li>
+</ul>
+</div>
+<a href="#" class="inline-flex items-center text-primary font-medium">
+Learn More
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+<div class="program-card flex-shrink-0 w-full md:w-80 bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<div class="w-16 h-16 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-heart-pulse-line ri-2x text-primary"></i>
+</div>
+<h3 class="text-xl font-bold mb-2">Health Sciences</h3>
+<p class="text-gray-600 mb-4">Build a career in healthcare with programs in Nursing, Public Health, Nutrition, and Medical Research.</p>
+<div class="mb-4">
+<div class="text-sm font-medium text-gray-700 mb-1">Popular Programs:</div>
+<ul class="text-sm text-gray-600 space-y-1">
+<li class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-2 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+Nursing & Patient Care
+</li>
+<li class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-2 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+Public Health
+</li>
+<li class="flex items-center">
+<div class="w-4 h-4 flex items-center justify-center mr-2 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+Nutrition & Dietetics
+</li>
+</ul>
+</div>
+<a href="#" class="inline-flex items-center text-primary font-medium">
+Learn More
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 hidden md:block">
+<button class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md text-gray-700 hover:text-primary transition-colors duration-300" id="prev-program">
+<i class="ri-arrow-left-s-line ri-lg"></i>
+</button>
+</div>
+<div class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 hidden md:block">
+<button class="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md text-gray-700 hover:text-primary transition-colors duration-300" id="next-program">
+<i class="ri-arrow-right-s-line ri-lg"></i>
+</button>
+</div>
+</div>
+<div class="flex justify-center mt-6 space-x-2">
+<div class="carousel-indicator w-8 h-2 bg-gray-300 rounded-full active"></div>
+<div class="carousel-indicator w-2 h-2 bg-gray-300 rounded-full"></div>
+<div class="carousel-indicator w-2 h-2 bg-gray-300 rounded-full"></div>
+<div class="carousel-indicator w-2 h-2 bg-gray-300 rounded-full"></div>
+</div>
+</div>
+</section>
+<!-- Faculty Highlights -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Meet Our Faculty</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Our distinguished faculty members are leaders in their fields, dedicated to excellence in teaching and groundbreaking research.</p>
+</div>
+<div class="flex justify-center mb-8">
+<div class="inline-flex bg-gray-100 p-1 !rounded-full">
+<button class="px-4 py-2 !rounded-full bg-primary text-white whitespace-nowrap">All Departments</button>
+<button class="px-4 py-2 !rounded-full text-gray-700 hover:bg-gray-200 transition-colors duration-300 whitespace-nowrap">Science</button>
+<button class="px-4 py-2 !rounded-full text-gray-700 hover:bg-gray-200 transition-colors duration-300 whitespace-nowrap">Arts</button>
+<button class="px-4 py-2 !rounded-full text-gray-700 hover:bg-gray-200 transition-colors duration-300 whitespace-nowrap">Business</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative overflow-hidden h-64">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20distinguished%20male%20professor%20in%20his%2050s%2C%20academic%20setting%2C%20neutral%20background%2C%20professional%20attire%2C%20confident%20expression%2C%20high%20quality%20portrait%2C%20photorealistic&width=400&height=500&seq=5&orientation=portrait" alt="Dr. Jonathan Reynolds" class="w-full h-full object-cover object-top faculty-image">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-1">Dr. Jonathan Reynolds</h3>
+<p class="text-gray-600 mb-3">Dean, School of Engineering</p>
+<p class="text-sm text-gray-500 mb-4">Ph.D. in Mechanical Engineering from MIT with over 20 years of experience in robotics research.</p>
+<div class="flex space-x-3">
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+<i class="ri-mail-line"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative overflow-hidden h-64">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20distinguished%20female%20professor%20in%20her%2040s%2C%20academic%20setting%2C%20neutral%20background%2C%20professional%20attire%2C%20confident%20expression%2C%20high%20quality%20portrait%2C%20photorealistic&width=400&height=500&seq=6&orientation=portrait" alt="Dr. Sophia Chen" class="w-full h-full object-cover object-top faculty-image">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-1">Dr. Sophia Chen</h3>
+<p class="text-gray-600 mb-3">Professor of Economics</p>
+<p class="text-sm text-gray-500 mb-4">Award-winning economist specializing in international trade policy and sustainable development.</p>
+<div class="flex space-x-3">
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+<i class="ri-mail-line"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative overflow-hidden h-64">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20distinguished%20male%20professor%20in%20his%2030s%2C%20academic%20setting%2C%20neutral%20background%2C%20professional%20attire%2C%20confident%20expression%2C%20high%20quality%20portrait%2C%20photorealistic&width=400&height=500&seq=7&orientation=portrait" alt="Dr. Marcus Williams" class="w-full h-full object-cover object-top faculty-image">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-1">Dr. Marcus Williams</h3>
+<p class="text-gray-600 mb-3">Chair, Computer Science</p>
+<p class="text-sm text-gray-500 mb-4">Leading researcher in artificial intelligence and machine learning with industry experience at Google.</p>
+<div class="flex space-x-3">
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+<i class="ri-mail-line"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="relative overflow-hidden h-64">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20distinguished%20female%20professor%20in%20her%2050s%2C%20academic%20setting%2C%20neutral%20background%2C%20professional%20attire%2C%20confident%20expression%2C%20high%20quality%20portrait%2C%20photorealistic&width=400&height=500&seq=8&orientation=portrait" alt="Dr. Elena Rodriguez" class="w-full h-full object-cover object-top faculty-image">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-1">Dr. Elena Rodriguez</h3>
+<p class="text-gray-600 mb-3">Professor of Literature</p>
+<p class="text-sm text-gray-500 mb-4">Renowned literary scholar specializing in comparative literature and cultural studies.</p>
+<div class="flex space-x-3">
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-colors duration-300">
+<i class="ri-mail-line"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+<div class="bg-white rounded-lg shadow-md p-6">
+<div class="text-4xl font-bold text-primary mb-2 counter">250+</div>
+<h3 class="text-xl font-semibold mb-2">Faculty Members</h3>
+<p class="text-gray-600">Dedicated professors and instructors committed to academic excellence.</p>
+</div>
+<div class="bg-white rounded-lg shadow-md p-6">
+<div class="text-4xl font-bold text-primary mb-2 counter">85%</div>
+<h3 class="text-xl font-semibold mb-2">Ph.D. Holders</h3>
+<p class="text-gray-600">Our faculty members hold doctoral degrees from prestigious universities worldwide.</p>
+</div>
+<div class="bg-white rounded-lg shadow-md p-6">
+<div class="text-4xl font-bold text-primary mb-2 counter">120+</div>
+<h3 class="text-xl font-semibold mb-2">Research Publications</h3>
+<p class="text-gray-600">Annually published research papers in leading international journals.</p>
+</div>
+</div>
+<div class="text-center mt-10">
+<a href="#" class="inline-flex items-center justify-center bg-white border border-gray-300 text-gray-700 px-6 py-3 !rounded-button hover:bg-gray-50 transition-colors duration-300 whitespace-nowrap">
+View All Faculty
+<div class="w-4 h-4 flex items-center justify-center ml-2">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Virtual Campus Tour -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Virtual Campus Tour</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Explore our beautiful campus from anywhere in the world. Take a virtual tour of our facilities, classrooms, libraries, and more.</p>
+</div>
+<div class="relative bg-white rounded-lg shadow-lg overflow-hidden">
+<div class="relative h-[500px]" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 bg-black bg-opacity-20"></div>
+<div class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
+<div class="hotspot w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white cursor-pointer" data-location="library">
+<i class="ri-book-line"></i>
+</div>
+</div>
+<div class="absolute top-1/3 right-1/3 transform translate-x-1/2 -translate-y-1/2">
+<div class="hotspot w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white cursor-pointer" data-location="science">
+<i class="ri-flask-line"></i>
+</div>
+</div>
+<div class="absolute bottom-1/4 left-1/2 transform -translate-x-1/2 translate-y-1/2">
+<div class="hotspot w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white cursor-pointer" data-location="sports">
+<i class="ri-basketball-line"></i>
+</div>
+</div>
+<div class="absolute bottom-1/3 right-1/4 transform translate-x-1/2 translate-y-1/2">
+<div class="hotspot w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white cursor-pointer" data-location="dorms">
+<i class="ri-home-line"></i>
+</div>
+</div>
+</div>
+<div class="p-6 bg-white" id="location-info">
+<h3 class="text-xl font-bold mb-2">Welcome to Westfield Academy</h3>
+<p class="text-gray-600 mb-4">Click on any hotspot on the map to explore our campus facilities. Our virtual tour allows you to navigate through key locations and learn more about what makes our campus special.</p>
+<div class="flex space-x-4">
+<button class="tour-location-btn px-4 py-2 !rounded-button bg-primary text-white whitespace-nowrap" data-location="library">Library</button>
+<button class="tour-location-btn px-4 py-2 !rounded-button bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-300 whitespace-nowrap" data-location="science">Science Center</button>
+<button class="tour-location-btn px-4 py-2 !rounded-button bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-300 whitespace-nowrap" data-location="sports">Sports Complex</button>
+<button class="tour-location-btn px-4 py-2 !rounded-button bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-300 whitespace-nowrap" data-location="dorms">Student Housing</button>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<a href="#" class="inline-flex items-center justify-center bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition-colors duration-300 whitespace-nowrap">
+Schedule a Campus Visit
+<div class="w-4 h-4 flex items-center justify-center ml-2">
+<i class="ri-calendar-line"></i>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Resources & Downloads -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Resources & Downloads</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Access important documents, forms, and resources to help you navigate your academic journey at Westfield Academy.</p>
+</div>
+<div class="mb-8">
+<div class="relative max-w-md mx-auto">
+<input type="text" placeholder="Search resources..." class="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+<div class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500">
+<i class="ri-search-line"></i>
+</div>
+</div>
+</div>
+<div class="flex justify-center mb-8">
+<div class="inline-flex bg-gray-100 p-1 !rounded-full">
+<button class="px-4 py-2 !rounded-full bg-primary text-white whitespace-nowrap">All Resources</button>
+<button class="px-4 py-2 !rounded-full text-gray-700 hover:bg-gray-200 transition-colors duration-300 whitespace-nowrap">Academic</button>
+<button class="px-4 py-2 !rounded-full text-gray-700 hover:bg-gray-200 transition-colors duration-300 whitespace-nowrap">Admissions</button>
+<button class="px-4 py-2 !rounded-full text-gray-700 hover:bg-gray-200 transition-colors duration-300 whitespace-nowrap">Financial</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="resource-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-red-100 rounded-lg mr-4">
+<i class="ri-file-pdf-line ri-lg text-red-500"></i>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-1">2025-2026 Academic Calendar</h3>
+<p class="text-sm text-gray-500 mb-3">PDF • 2.4 MB • Updated May 1, 2025</p>
+<div class="flex items-center text-sm">
+<a href="#" class="inline-flex items-center text-primary font-medium">
+Download
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-download-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="resource-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg mr-4">
+<i class="ri-file-word-line ri-lg text-blue-500"></i>
+</div>
+<div>
+<div class="flex items-center mb-1">
+<h3 class="text-lg font-semibold">Undergraduate Application Form</h3>
+<div class="ml-2 shine">
+<span class="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">New</span>
+</div>
+</div>
+<p class="text-sm text-gray-500 mb-3">DOCX • 1.8 MB • Updated April 15, 2025</p>
+<div class="flex items-center text-sm">
+<a href="#" class="inline-flex items-center text-primary font-medium">
+Download
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-download-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="resource-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-lg mr-4">
+<i class="ri-file-excel-line ri-lg text-green-500"></i>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-1">Tuition & Fees Schedule</h3>
+<p class="text-sm text-gray-500 mb-3">XLSX • 985 KB • Updated March 30, 2025</p>
+<div class="flex items-center text-sm">
+<a href="#" class="inline-flex items-center text-primary font-medium">
+Download
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-download-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="resource-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-purple-100 rounded-lg mr-4">
+<i class="ri-file-line ri-lg text-purple-500"></i>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-1">Student Handbook</h3>
+<p class="text-sm text-gray-500 mb-3">PDF • 5.2 MB • Updated February 10, 2025</p>
+<div class="flex items-center text-sm">
+<a href="#" class="inline-flex items-center text-primary font-medium">
+Download
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-download-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="resource-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-yellow-100 rounded-lg mr-4">
+<i class="ri-file-pdf-line ri-lg text-yellow-600"></i>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-1">Financial Aid Guide</h3>
+<p class="text-sm text-gray-500 mb-3">PDF • 3.7 MB • Updated January 25, 2025</p>
+<div class="flex items-center text-sm">
+<a href="#" class="inline-flex items-center text-primary font-medium">
+Download
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-download-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="resource-card bg-white rounded-lg shadow-md p-6 border border-gray-100">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg mr-4">
+<i class="ri-file-pdf-line ri-lg text-blue-500"></i>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-1">Campus Map & Directions</h3>
+<p class="text-sm text-gray-500 mb-3">PDF • 8.1 MB • Updated December 5, 2024</p>
+<div class="flex items-center text-sm">
+<a href="#" class="inline-flex items-center text-primary font-medium">
+Download
+<div class="w-4 h-4 flex items-center justify-center ml-1">
+<i class="ri-download-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<a href="#" class="inline-flex items-center justify-center bg-white border border-gray-300 text-gray-700 px-6 py-3 !rounded-button hover:bg-gray-50 transition-colors duration-300 whitespace-nowrap">
+View All Resources
+<div class="w-4 h-4 flex items-center justify-center ml-2">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Student Portal Interface -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="max-w-4xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Student Portal</h2>
+<p class="text-gray-600 mb-6">Access your courses, grades, assignments, and campus resources through our secure student portal. Stay connected with professors and peers.</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<div>
+<h3 class="font-semibold mb-1">Course Management</h3>
+<p class="text-sm text-gray-600">Access course materials, submit assignments, and track your progress.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<div>
+<h3 class="font-semibold mb-1">Academic Records</h3>
+<p class="text-sm text-gray-600">View your grades, transcripts, and academic standing in real-time.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line ri-lg"></i>
+</div>
+<div>
+<h3 class="font-semibold mb-1">Financial Information</h3>
+<p class="text-sm text-gray-600">Check tuition balances, make payments, and view financial aid details.</p>
+</div>
+</li>
+</ul>
+<a href="#" class="inline-flex items-center justify-center bg-primary text-white px-6 py-3 !rounded-button hover:bg-opacity-90 transition-colors duration-300 whitespace-nowrap">
+Learn More About Portal Features
+<div class="w-4 h-4 flex items-center justify-center ml-2">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<div class="bg-white rounded-lg shadow-lg p-8">
+<h3 class="text-2xl font-bold mb-6 text-center">Student Login</h3>
+<form>
+<div class="mb-6 relative">
+<input type="text" id="username" placeholder=" " class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+<label for="username" class="floating-label text-gray-500">Username or Email</label>
+</div>
+<div class="mb-6 relative">
+<input type="password" id="password" placeholder=" " class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+<label for="password" class="floating-label text-gray-500">Password</label>
+<button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-500" id="toggle-password">
+<i class="ri-eye-line"></i>
+</button>
+</div>
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center">
+<input type="checkbox" id="remember" class="custom-checkbox mr-2">
+<label for="remember" class="text-sm text-gray-600">Remember me</label>
+</div>
+<a href="#" class="text-sm text-primary hover:underline">Forgot password?</a>
+</div>
+<button type="submit" class="w-full bg-primary hover:bg-opacity-90 text-white py-3 !rounded-button transition-all duration-300 whitespace-nowrap">Sign In</button>
+</form>
+<div class="mt-6 text-center">
+<p class="text-sm text-gray-600">
+New student? <a href="#" class="text-primary hover:underline">Activate your account</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Section -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<a href="#" class="text-white text-2xl font-['Pacifico'] mb-6 inline-block">logo</a>
+<p class="text-gray-400 mb-6">Westfield Academy is committed to providing exceptional education and fostering a diverse, inclusive community of learners and leaders.</p>
+<div class="flex space-x-4">
+<a href="#" class="social-icon w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:text-white transition-colors duration-300">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="social-icon w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:text-white transition-colors duration-300">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="social-icon w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:text-white transition-colors duration-300">
+<i class="ri-instagram-fill"></i>
+</a>
+<a href="#" class="social-icon w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-gray-400 hover:text-white transition-colors duration-300">
+<i class="ri-linkedin-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Academics</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Admissions</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Campus Life</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Research</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">News & Events</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6">Contact Us</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-gray-400 mt-0.5 mr-3">
+<i class="ri-map-pin-line"></i>
+</div>
+<span class="text-gray-400">123 University Avenue, Boston, MA 02115, USA</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3">
+<i class="ri-phone-line"></i>
+</div>
+<span class="text-gray-400">(617) 555-1234</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3">
+<i class="ri-mail-line"></i>
+</div>
+<span class="text-gray-400">info@westfieldacademy.edu</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-6">Newsletter</h3>
+<p class="text-gray-400 mb-4">Subscribe to our newsletter to receive updates on news, events, and opportunities.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="w-full px-4 py-2 border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary text-gray-900">
+<button type="submit" class="bg-primary hover:bg-opacity-90 text-white px-4 py-2 rounded-r-lg transition-colors duration-300 whitespace-nowrap">Subscribe</button>
+</div>
+</form>
+<p class="text-xs text-gray-500">By subscribing, you agree to our Privacy Policy and consent to receive updates from our school.</p>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2025 Westfield Academy. All rights reserved.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Privacy Policy</a>
+<a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Terms of Service</a>
+<a href="#" class="text-gray-500 hover:text-white text-sm transition-colors duration-300">Accessibility</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Back to Top Button -->
+<button class="back-to-top fixed bottom-8 right-8 w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300" id="back-to-top">
+<i class="ri-arrow-up-line ri-lg"></i>
+</button>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Theme toggle functionality
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+function setTheme(theme) {
+if (theme === 'dark') {
+body.classList.remove('light-mode');
+body.classList.add('dark-mode', 'dark');
+themeToggle.querySelector('i').className = 'ri-moon-line';
+} else {
+body.classList.remove('dark-mode', 'dark');
+body.classList.add('light-mode');
+themeToggle.querySelector('i').className = 'ri-sun-line';
+}
+localStorage.setItem('theme', theme);
+}
+// Check for saved theme preference or use system preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+setTheme(savedTheme);
+} else {
+setTheme(prefersDarkScheme.matches ? 'dark' : 'light');
+}
+// Theme toggle click handler
+themeToggle.addEventListener('click', () => {
+const currentTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+setTheme(currentTheme);
+});
+// Listen for system theme changes
+prefersDarkScheme.addEventListener('change', (e) => {
+if (!localStorage.getItem('theme')) {
+setTheme(e.matches ? 'dark' : 'light');
+}
+});
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const targetId = this.getAttribute('href').slice(1);
+const targetElement = document.getElementById(targetId);
+if (targetElement) {
+targetElement.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+// Close mobile menu if open
+const mobileMenu = document.getElementById('mobile-menu');
+if (mobileMenu.classList.contains('open')) {
+mobileMenu.classList.remove('open');
+document.body.style.overflow = '';
+}
+}
+});
+});
+// Navigation scroll effect
+const header = document.querySelector('header');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 50) {
+header.classList.remove('nav-transparent');
+header.classList.add('nav-solid');
+} else {
+header.classList.add('nav-transparent');
+header.classList.remove('nav-solid');
+}
+});
+// Mobile menu toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const closeMenuButton = document.getElementById('close-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.add('open');
+mobileMenu.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+});
+closeMenuButton.addEventListener('click', function() {
+mobileMenu.classList.remove('open');
+setTimeout(() => {
+mobileMenu.classList.add('hidden');
+}, 300);
+document.body.style.overflow = '';
+});
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+if (mobileMenu.classList.contains('open') &&
+!mobileMenu.contains(event.target) &&
+!mobileMenuButton.contains(event.target)) {
+mobileMenu.classList.remove('open');
+setTimeout(() => {
+mobileMenu.classList.add('hidden');
+}, 300);
+document.body.style.overflow = '';
+}
+});
+// Close mobile menu when pressing Escape key
+document.addEventListener('keydown', function(event) {
+if (event.key === 'Escape' && mobileMenu.classList.contains('open')) {
+mobileMenu.classList.remove('open');
+setTimeout(() => {
+mobileMenu.classList.add('hidden');
+}, 300);
+document.body.style.overflow = '';
+}
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Program carousel navigation
+const carousel = document.getElementById('program-carousel');
+const prevButton = document.getElementById('prev-program');
+const nextButton = document.getElementById('next-program');
+const carouselItems = carousel.querySelectorAll('.program-card');
+const itemWidth = carouselItems[0].offsetWidth + 24; // Width + gap
+prevButton.addEventListener('click', function() {
+carousel.scrollLeft -= itemWidth;
+});
+nextButton.addEventListener('click', function() {
+carousel.scrollLeft += itemWidth;
+});
+// Carousel indicators
+const indicators = document.querySelectorAll('.carousel-indicator');
+indicators.forEach((indicator, index) => {
+indicator.addEventListener('click', function() {
+// Remove active class from all indicators
+indicators.forEach(ind => ind.classList.remove('active'));
+// Add active class to clicked indicator
+indicator.classList.add('active');
+// Scroll carousel to corresponding position
+carousel.scrollLeft = index * (carousel.scrollWidth / indicators.length);
+});
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Virtual Tour Hotspots
+const hotspots = document.querySelectorAll('.hotspot');
+const locationInfo = document.getElementById('location-info');
+const locationButtons = document.querySelectorAll('.tour-location-btn');
+const locations = {
+library: {
+title: 'University Library',
+description: 'Our state-of-the-art library houses over 500,000 volumes and provides digital access to millions of resources. With quiet study spaces, group collaboration rooms, and technology labs, it serves as the intellectual heart of our campus.'
+},
+science: {
+title: 'Science Center',
+description: 'The Science Center features cutting-edge laboratories, research facilities, and classrooms equipped with the latest technology. It houses our departments of Biology, Chemistry, Physics, and Environmental Science.'
+},
+sports: {
+title: 'Sports Complex',
+description: 'Our comprehensive sports complex includes an Olympic-sized swimming pool, basketball courts, fitness center, and outdoor athletic fields. It supports both competitive sports teams and recreational activities for all students.'
+},
+dorms: {
+title: 'Student Housing',
+description: 'Our residential halls offer comfortable, modern living spaces designed to foster community and support academic success. Options include traditional dormitories, suite-style accommodations, and apartment-style housing for upperclassmen.'
+}
+};
+function updateLocationInfo(location) {
+const info = locations[location];
+locationInfo.innerHTML = `
+<h3 class="text-xl font-bold mb-2">${info.title}</h3>
+<p class="text-gray-600 mb-4">${info.description}</p>
+<div class="flex space-x-4">
+${Object.keys(locations).map(loc =>
+`<button class="tour-location-btn px-4 py-2 !rounded-button ${loc === location ? 'bg-primary text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors duration-300'} whitespace-nowrap" data-location="${loc}">${locations[loc].title.split(' ').pop()}</button>`
+).join('')}
+</div>
+`;
+// Reattach event listeners to new buttons
+document.querySelectorAll('.tour-location-btn').forEach(btn => {
+btn.addEventListener('click', function() {
+updateLocationInfo(this.dataset.location);
+});
+});
+}
+hotspots.forEach(hotspot => {
+hotspot.addEventListener('click', function() {
+updateLocationInfo(this.dataset.location);
+});
+});
+locationButtons.forEach(button => {
+button.addEventListener('click', function() {
+updateLocationInfo(this.dataset.location);
+});
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Password visibility toggle
+const togglePassword = document.getElementById('toggle-password');
+const passwordInput = document.getElementById('password');
+togglePassword.addEventListener('click', function() {
+const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+passwordInput.setAttribute('type', type);
+// Toggle icon
+const icon = togglePassword.querySelector('i');
+if (type === 'text') {
+icon.classList.remove('ri-eye-line');
+icon.classList.add('ri-eye-off-line');
+} else {
+icon.classList.remove('ri-eye-off-line');
+icon.classList.add('ri-eye-line');
+}
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Back to top button
+const backToTopButton = document.getElementById('back-to-top');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 300) {
+backToTopButton.classList.add('visible');
+} else {
+backToTopButton.classList.remove('visible');
+}
+});
+backToTopButton.addEventListener('click', function() {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+});
+</script>
+</body>
+</html>
